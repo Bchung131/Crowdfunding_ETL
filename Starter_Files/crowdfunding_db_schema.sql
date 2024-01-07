@@ -7,7 +7,7 @@
 );
 
 CREATE TABLE "Subcategory" (
-    "subcategory_id" VARCHAR(7)   NOT NULL,
+    "subcategory_id" VARCHAR(8)   NOT NULL,
     "subcategory" VARCHAR(30)   NOT NULL,
     CONSTRAINT "pk_Subcategory" PRIMARY KEY (
         "subcategory_id"
@@ -38,7 +38,7 @@ CREATE TABLE "Campaign" (
     "launch_date" DATE   NOT NULL,
     "end_date" DATE   NOT NULL,
     "category_id" VARCHAR(4)   NOT NULL,
-    "subcategory_id" VARCHAR(7)   NOT NULL,
+    "subcategory_id" VARCHAR(8)   NOT NULL,
     CONSTRAINT "pk_Campaign" PRIMARY KEY (
         "cf_id"
      )
@@ -52,3 +52,15 @@ REFERENCES "Category" ("category_id");
 
 ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "Subcategory" ("subcategory_id");
+
+SELECT* 
+FROM "Category"
+
+SELECT* 
+FROM "Subcategory"
+
+SELECT* 
+FROM "Contact"
+
+SELECT* 
+FROM "Campaign"
